@@ -1,0 +1,46 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Detalle de Peticiones</h2>
+
+
+    <div class="card">
+        <div class="row">
+
+
+            <div class="col-md-9">
+                <div class="card-body">
+                    <h6 class="card-text mb-2 ">{{ peticion.titulo }}</h6>
+
+
+                    <div>
+                        <strong>Descripción</strong>
+                        <p class="card-text">{{ peticion.descripcion }}</p>
+                    </div>
+
+                    <div>
+                        <strong>Destinatarios</strong>
+                        <p class="card-text">{{ peticion.destinatario }}</p>
+                    </div>
+
+       
+                    <div>
+                        <strong>Categoria</strong>
+                        <p class="card-text">{{ categoria }}</p>
+                    </div>
+
+                    <div>
+                        <strong>Imagen</strong>
+                        <img src={{image}} alt="imagen">
+                        
+                    </div>
+                    <div>
+                        <strong>Firmantes</strong>
+                        <p class="card-text">{{ peticion.firmantes }} <strong>han firmado esta petición</strong></p>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

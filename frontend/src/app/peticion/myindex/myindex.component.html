@@ -1,0 +1,17 @@
+<div class="container">
+    <table class="table table-bordered">
+        <tr></tr>
+        <tr *ngFor="let pet of peticion">
+            <td {{pet.id}}></td>
+            <td {{pet.titulo}}></td>
+            <td {{pet.descripcion}}></td>
+            <td>
+                <a href="#" [routerLink]="['/peticion/', pet.id, 'view']" class="btn btn-info">View</a>
+                <a href="#" [routerLink]="['/peticion/', pet.id, 'edit']" class="btn btn-info">Edit</a>
+               <button type="button" (click)="deletePeticion(pet.id)" class="btn btn.info"></button>
+
+
+            </td>
+        </tr>
+    </table>
+</div>

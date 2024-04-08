@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand text-danger fs-2" href="#">Change.org</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link fs-4 m-2" routerLink="peticiones/create" *ngIf="isSignedIn">Inicia una petición</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link fs-4 m-2 link-danger"  *ngIf="!isSignedIn"  routerLink="/register">Registrarse</a>
+         </li>
+          <li class="nav-item">
+              <a class="nav-link fs-4 m-2" *ngIf="!isSignedIn" routerLink="/login">Iniciar sesión</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link fs-4 m-2" *ngIf="isSignedIn" (click)="signOut()"routerLink="/home" >Cerrar sesión</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-4 m-2" routerLink="/peticion/index" *ngIf="isSignedIn">Todas las peticiones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-4 m-2" routerLink="/profile" *ngIf="isSignedIn">Perfil</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<footer class="  bg-light p-5">
+  <div class="container text-center">
+      © 2022, Change.org, PBC
+      <a class="text-reset fw-bold" href="https://change.org/">Change.org</a>
+  </div>
+</footer>

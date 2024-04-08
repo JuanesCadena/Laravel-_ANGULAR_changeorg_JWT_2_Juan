@@ -1,0 +1,31 @@
+<style>
+    .marg {
+           padding-bottom: 220px;
+           }
+   </style>
+
+<div class="auth-wrapper text-center">
+    <form class="form-signin" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <h3 class="h3 mb-3 font-weight-normal">Sign in</h3>
+        <!-- Errors -->
+        <div *ngIf="errors?.email" class="alert alert-danger mt-3">
+            {{ errors?.email }}
+        </div>
+        <div *ngIf="errors?.password" class="alert alert-danger mt-3">
+            {{ errors?.password }}
+        </div>
+        <div *ngIf="errors?.error" class="alert alert-danger mt-3">
+            {{ errors?.error }}
+        </div>
+        <!-- Login -->
+        <div class="form-group">
+            <label class="small">Email address</label>
+            <input type="email" class="form-control" formControlName="email">
+        </div>
+        <div class="form-group">
+            <label class="small">Password</label>
+            <input type="password" class="form-control" formControlName="password">
+        </div>
+        <button type="submit" class="btn btn-block btn-primary">Log in</button>
+    </form>
+</div>

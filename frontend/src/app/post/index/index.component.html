@@ -1,0 +1,34 @@
+<div class="container">
+    <h1>Angular 14 CRUD Example - Tutsmake.com</h1>
+  
+    <a href="#" routerLink="/peticion/create/" class="btn btn-success">Create New Petition</a>
+    
+    <table class="table table-bordered">
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Descripcion</th>
+        <th>Destinatario</th>
+        <th>Firmantes</th>
+        <th>Estado</th>
+        <th>Usuario</th>
+        <th>Categoria</th>
+        <th width="220px">Action</th>
+      </tr>
+      <tr *ngFor="let peticion of peticiones">
+        <td>{{ peticion.id }}</td>
+        <td>{{ peticion.titulo }}</td>
+        <td>{{ peticion.descripcion }}</td>
+        <td>{{ peticion.destinatario }}</td>
+        <td>{{ peticion.firmantes }}</td>
+        <td>{{ peticion.estado }}</td>
+        <td>{{ peticion.user_id }}</td>
+        <td>{{ peticion.categoria_id }}</td>
+        <td>
+          <a href="#" [routerLink]="['/peticion/', peticion.id, 'view']" class="btn btn-info">View</a>
+          <a href="#" [routerLink]="['/peticion/', peticion.id, 'edit']" class="btn btn-primary">Edit</a>
+          <button type="button" (click)="deletePeticion(peticion.id)" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </table>
+ </div>
